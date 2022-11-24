@@ -1,12 +1,10 @@
 package activeRecord;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
 
 public class PrincipaleJDBC {
 
@@ -14,7 +12,7 @@ public class PrincipaleJDBC {
 
     public static void main(String[] args) throws SQLException {
 
-        // variables a modifier en fonction de la base
+         /* // variables a modifier en fonction de la base
         String userName = "root";
         String password = "";
         String serverName = "localhost";
@@ -31,7 +29,9 @@ public class PrincipaleJDBC {
         connectionProps.put("password", password);
         String urlDB = "jdbc:mysql://" + serverName + ":";
         urlDB += portNumber + "/" + dbName;
-        Connection connect = DriverManager.getConnection(urlDB, connectionProps);
+        Connection connect = DriverManager.getConnection(urlDB, connectionProps);*/
+
+Connection connect=DBConnection.getConnection();
 
         // creation de la table personne
         {

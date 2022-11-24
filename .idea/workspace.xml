@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88a033d6-6fd9-4e17-a86b-fc95c07f706d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrincipaleJDBC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrincipaleJDBC.java" afterDir="false" />
+    <list default="true" id="88a033d6-6fd9-4e17-a86b-fc95c07f706d" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFilm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestPersonne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activeRecord/CompilationMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activeRecord/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activeRecord/Film.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/activeRecord/Personne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testpersonne.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrincipaleJDBC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrincipaleJDBC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrincipaleJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/activeRecord/PrincipaleJDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Didier/IdeaProjects/QualiteDevS3/PrincipaleJDBC",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -59,27 +64,74 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Didier\IdeaProjects\QualiteDevS3\PrincipaleJDBC" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Didier\IdeaProjects\QualiteDevS3\PrincipaleJDBC\src\activeRecord" />
+      <recent name="C:\Users\Didier\IdeaProjects\QualiteDevS3\PrincipaleJDBC" />
       <recent name="C:\Users\Didier\IdeaProjects\QualiteDevS3\PrincipaleJDBC\src" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="activeRecord" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="PrincipaleJDBC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="activeRecord.PrincipaleJDBC" />
+  <component name="RunManager" selected="JUnit.TestPersonne">
+    <configuration name="TestPersonne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PrincipaleJDBC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="activeRecord.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPersonne" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrincipaleJDBC" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrincipaleJDBC" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testSave" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testSaveNew" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrincipaleJDBC" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testSaveNew" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testSaveUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrincipaleJDBC" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testSaveUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PrincipaleJDBC" />
+        <item itemvalue="JUnit.TestPersonne" />
+        <item itemvalue="JUnit.test" />
+        <item itemvalue="JUnit.test.testSaveNew" />
+        <item itemvalue="JUnit.test.testSaveUpdate" />
+        <item itemvalue="JUnit.test.testSave" />
       </list>
     </recent_temporary>
   </component>
@@ -91,8 +143,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668674558560</updated>
-      <workItem from="1668674561201" duration="654000" />
+      <workItem from="1668674561201" duration="4159000" />
+      <workItem from="1668682662663" duration="2452000" />
+      <workItem from="1669043769102" duration="9815000" />
+      <workItem from="1669124129100" duration="608000" />
+      <workItem from="1669277650789" duration="5789000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1668675278528</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668675278528</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +172,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
