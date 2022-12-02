@@ -9,8 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPersonne {
     Connection connection;
@@ -72,11 +71,22 @@ public class TestPersonne {
 
     @Test
     public void testSaveUpdate() throws SQLException {
-        List personnes = Personne.findAll();
-        Personne j = (Personne) personnes.get(2);
+        Personne j = Personne.findById(2);
         int i = Personne.findAll().size();
         j.save();
         assertEquals(i, Personne.findAll().size());
+
+    }
+    @Test
+    public void testSet() throws SQLException {
+        Personne j = Personne.findById(2);
+        j.setNom("test1");
+        j.setPrenom("test");
+        //Test mise a jour dans la bd
+        assertEquals(4, Personne.findAll().size());
+        assertEquals(Personne.findById(2).getNom(),"test1");
+        assertEquals(Personne.findById(2).getPrenom(),"test");
+
     }
 @Test
     public void testDelete() throws SQLException {
@@ -84,5 +94,6 @@ public class TestPersonne {
         Personne pers=Personne.findById(2);
         pers.delete();
         assertEquals(Personne.findAll().size(),i-1);
+        assertFalse(Personne.findAll().contains(pers));
 }
 }
