@@ -43,8 +43,9 @@ public class Personne {
         if (rs.next()) {
             String n = rs.getString("nom");
             String p = rs.getString("prenom");
-            int id = rs.getInt("id");
-            return new Personne(n, p);
+            Personne pers = new Personne(n, p);
+            pers.id = rs.getInt("id");
+            return pers;
         }
 
         return null;
@@ -91,10 +92,9 @@ public class Personne {
     }
 
     public void save() throws SQLException {
-        if (this.id == -1) {
+        if (this.id == -1){
             this.saveNew();
-        } else if (!findById(this.id).equals(this)) {
-            System.out.println("update");
+        } else if (findById(this.id)!=null) {
             this.update();
         }
     }
@@ -118,8 +118,6 @@ public class Personne {
         ResultSet rs = prep1.getResultSet();
         // s'il y a un resultat on recupere le dernier de meme nom et prenom
         while (rs.next()) {
-            int i=0;
-            System.out.println(rs.getInt("id"));
             this.id = rs.getInt("id");
         }
     }
@@ -134,8 +132,10 @@ public class Personne {
         prepa.execute();
     }
 
-    public boolean equals(Personne p){
-        return (this.nom.equals(p.nom)&&this.prenom.equals(p.prenom)&&this.id==p.id);
+    @Override
+    public boolean equals(Object o) {
+        Personne p=(Personne) o;
+        return (this.nom.equals(p.nom) && this.prenom.equals(p.prenom) && this.id == p.id);
     }
 
     public String getNom() {
@@ -146,11 +146,29 @@ public class Personne {
         return prenom;
     }
 
-    public void setPrenom(String prenom) {
+    public void setPrenom(String prenom) throws SQLException {
         this.prenom = prenom;
+        this.save();
+    }
+
+    public void setNom(String nom) throws SQLException {
+        this.nom = nom;
+        this.save();
     }
 
     public int getId() {
         return id;
+    }
+    public void delete() throws SQLException {
+        Connection connection=DBConnection.getConnection();
+        String sql="DELETE FROM `personne` WHERE `personne`.`ID` = ? ;";
+        PreparedStatement prepa = connection.prepareStatement(sql);
+        prepa.setInt(1, this.id);
+        prepa.execute();
+    }
+
+    @Override
+    public String toString(){
+        return "nom: "+this.nom+" prenom: "+this.prenom+" id: "+this.id;
     }
 }

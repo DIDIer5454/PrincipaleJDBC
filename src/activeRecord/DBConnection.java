@@ -41,6 +41,7 @@ public class DBConnection {
         // iL faut changer le nom de la db
         dbName = nomDB;
         set = true;
+        DBConnection.closeConnection();
     }
     public static void closeConnection() throws SQLException {
         connection.close();
